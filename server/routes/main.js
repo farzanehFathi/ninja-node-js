@@ -41,15 +41,21 @@ router.get("/about", (req, res) => {
 
 module.exports = router;
 
-// router.get("", async (req, res) => {
-//   const locals = {
-//     title: "NodeJs Blog",
-//     descirption: "Simple blog crated with NodeJs, Express & MongoDb",
-//   };
-//   try {
-//     const data = await Post.find();
-//     res.render("index", { locals, data });
-//   } catch (err) {
-//     console.log(err);
-//   }
-// });
+// GET
+// post
+router.get("/post/:id", async (req, res) => {
+  try {
+    const slug = req.params.id;
+
+    const data = await Post.findById({ _id: slug });
+
+    const locals = {
+      title: data.title,
+      descirption: "Simple blog crated with NodeJs, Express & MongoDb",
+    };
+
+    res.render("post", { locals, data });
+  } catch (err) {
+    console.log(err);
+  }
+});
