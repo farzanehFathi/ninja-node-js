@@ -1,13 +1,8 @@
-const people = ["fari", "maxime", " peter", " hannah"];
-const ages = ["32", "33", "32", "35"];
+const ppl = ["fari", "mari", "nani"];
+const ages = [32, 33, 35];
 
-const person_Age = (person, age) => {
-  return `${person} is ${age} years old`;
+const dict = (ppl, ages) => {
+  console.log(`${ppl} are ${ages} yo respectively!`);
 };
 
-console.log(people);
-console.log(ages);
-
-console.log(person_Age(people, ages));
-
-module.exports = { people, ages, person_Age };
+module.exports = { ppl, ages, dict };
