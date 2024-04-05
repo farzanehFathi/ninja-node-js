@@ -9,17 +9,19 @@ let port = 3000;
 app.listen(port);
 
 app.get("/", (req, res) => {
-  res.render("index");
+  const blogs = [];
+
+  res.render("index", { title: "Home", blogs });
 });
 
 app.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", { title: "About" });
 });
 
 app.get("/blogs/create", (req, res) => {
-  res.render("create");
+  res.render("create", { title: "New Post" });
 });
 
 app.use((req, res) => {
-  res.status(404).render("404");
+  res.status(404).render("404", { title: "404" });
 });
