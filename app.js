@@ -15,16 +15,16 @@ app.use(express.static("public"));
 // app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  const blogs = [];
+  const blogss = [];
 
-  res.render("index", { title: "Home", blogs });
+  res.render("index", { title: "Home", blogss });
 });
 
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
 });
 
-app.get("/blogs/create", (req, res) => {
+app.get("/create", (req, res) => {
   res.render("create", { title: "New Post" });
 });
 
