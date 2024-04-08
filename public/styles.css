@@ -101,3 +101,35 @@ textarea {
   font-size: 1.2em;
   cursor: pointer;
 }
+
+.blogs a {
+  display: block;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 6px solid crimson;
+}
+
+.blogs a:hover h3 {
+  color: crimson;
+}
+
+/* details stylie */
+.details {
+  position: relative;
+}
+
+.delete {
+  color: crimson;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.delete:hover {
+  color: white;
+  background-color: crimson;
+  cursor: pointer;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}

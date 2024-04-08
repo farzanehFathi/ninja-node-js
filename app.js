@@ -1,8 +1,7 @@
 const express = require("express");
-const morgan = require("morgan");
 const mongoose = require("mongoose");
 const env = require("dotenv").config().parsed;
-const Blog = require("./models/blog");
+const blogRoutes = require("./routes/blogRoutes");
 
 const app = express();
 let port = 3000;
@@ -23,6 +22,7 @@ app.set("view engine", "ejs");
 
 //middlware & static files
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 
 //basic routes
 app.get("/", (req, res) => {
@@ -33,21 +33,8 @@ app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
 });
 
-// blogs routes
-app.get("/blogs", (req, res) => {
-  Blog.find()
-    .sort({ createdAt: -1 })
-    .then((result) => {
-      res.render("index", { title: "All Blogs", blogs: result });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
-app.get("/blogs/create", (req, res) => {
-  res.render("create", { title: "New Post" });
-});
+// blog routes
+app.use(blogRoutes);
 
 app.use((req, res) => {
   res.status(404).render("404", { title: "404" });
