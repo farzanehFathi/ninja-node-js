@@ -24,18 +24,7 @@ app.set("view engine", "ejs");
 //middlware & static files
 app.use(express.static("public"));
 
-// app.use(morgan("dev"));
-
-app.get("/single-blog", (req, res) => {
-  Blog.findById("65fff412c0d4481029d3776e")
-    .then((result) => {
-      res.send(result);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
+//basic routes
 app.get("/", (req, res) => {
   res.redirect("/blogs");
 });
