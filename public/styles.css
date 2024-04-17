@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+body {
+  font-family: Nunito;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  color: crimson;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 80px;
+  border-bottom: 1px solid #eee;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: end;
+  flex-wrap: wrap;
+
+  padding: 0 40px;
+}
+
+nav li {
+  padding-right: 30px;
+}
+
+.content {
+  padding: 40px 80px;
+}
+
+.create-blog form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.create-blog input,
+textarea {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+
+.create-blog label {
+  display: block;
+  margin-top: 24px;
+}
+
+textarea {
+  height: 120px;
+}
+
+.create-blog button {
+  margin-top: 20px;
+  background: crimson;
+  color: white;
+  padding: 6px;
+  border: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+}
