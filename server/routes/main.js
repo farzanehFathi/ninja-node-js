@@ -9,7 +9,7 @@ router.get("", (req, res) => {
     description: "Simpe Blog created with NodeJs, Express & MongoDb",
   };
 
-  res.render("index");
+  res.render("index", { locals });
 });
 
 router.get("/about", (req, res) => {
