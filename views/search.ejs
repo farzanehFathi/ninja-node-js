@@ -1,0 +1,18 @@
+<section class="px-12 my-12">
+  <h1 class="text-gray-600 text-2xl font-bold mb-6">Search Results</h1>
+  <ul class="mb-12">
+    <% data.forEach(post => { %>
+    <li class="pl-3 border-l-4 border-gray-600">
+      <div
+        class="p-3 pb-1 mb-5 border-b border-gray-300 flex justify-between items-center"
+      >
+        <a href="/post/<%= post._id %>" class="hover:text-branding"
+          ><%= post.title %>
+        </a>
+        <div class="text-gray-500"><%= post.CreatedAt.toDateString() %></div>
+      </div>
+    </li>
+
+    <% }) %>
+  </ul>
+</section>
