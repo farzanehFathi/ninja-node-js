@@ -5,7 +5,7 @@
 
 <img
   src="/img/hero-img.jpg"
-  alt="author writing on a notebook"
+  alt="person looking out through window"
   class="w-1/2 h-48 md:h-72 rounded-lg object-cover mx-auto"
   width="981"
   height="528"
@@ -14,24 +14,13 @@
 <section class="px-12 my-12">
   <h2 class="text-branding text-2xl font-bold mb-6">Latest Posts</h2>
   <ul class="mb-12">
-    <% data.forEach(post => { %>
-    <li class="pl-3 border-l-4 border-gray-600">
-      <div
-        class="p-3 pb-1 mb-5 border-b border-gray-300 flex justify-between items-center"
+    <li class="p-3 shadow-lg">
+      <a href="#"
+        ><span class="text-lg font-bold">Post Title</span>
+        <span class="text-gray-500"> Date </span></a
       >
-        <a href="/post/<%= post._id %>" class="hover:text-branding"
-          ><%= post.title %>
-        </a>
-        <div class="text-gray-500"><%= post.CreatedAt.toDateString() %></div>
-      </div>
     </li>
-
-    <% }) %>
   </ul>
 
-  <% if (nextPage !== null) {%>
-  <a href="/?page=<%= nextPage %>" class="text-gray-600">
-    &lt; View Older Posts</a
-  >
-  <% } %>
+  <a href="#" class="pagination"> &lt; View Older Posts</a>
 </section>
