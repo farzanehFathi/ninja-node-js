@@ -1,15 +1,22 @@
 const express = require("express");
-
 const router = express.Router();
+const Post = require("../models/Post");
 
 // Routes
-router.get("", (req, res) => {
+
+// GET --- HOME
+router.get("", async (req, res) => {
   const locals = {
     title: "NodeJs Blog",
     description: "Simpe Blog created with NodeJs, Express & MongoDb",
   };
 
-  res.render("index", { locals });
+  try {
+    const data = await Post.find();
+    res.render("index", { locals, data });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 router.get("/about", (req, res) => {
