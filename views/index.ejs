@@ -14,15 +14,20 @@
 <section class="px-12 my-12">
   <h2 class="text-branding text-2xl font-bold mb-6">Latest Posts</h2>
   <ul class="mb-12">
-    <% data.forEach (post => {) %>
-
-    <li class="p-3 shadow-lg">
-      <a href="#"
-        ><span class="text-lg font-bold"><% post.title %></span>
-        <span class="text-gray-500"> <% post.CreatedAt %> </span></a
+    <% data.forEach (post => { %>
+    <div class="border-l-8 border-branding mb-3 pl-3">
+      <li
+        class="border-b border-gray-200 lg:flex lg:justify-between lg:items-center lg:py-3"
       >
-    </li>
-    <% } %>
+        <a href="#" class="text-lg font-semibold lg:text-2xl lg:font-normal">
+          <%= post.title %></a
+        >
+        <div class="text-gray-600 text-sm lg:text-base">
+          <%= post.CreatedAt.toDateString() %>
+        </div>
+      </li>
+    </div>
+    <% }) %>
   </ul>
 
   <a href="#" class="pagination"> &lt; View Older Posts</a>
