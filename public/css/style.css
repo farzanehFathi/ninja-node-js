@@ -748,6 +748,11 @@ video {
   padding-right: 1rem;
 }
 
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .pl-1{
   padding-left: 0.25rem;
 }
@@ -897,6 +902,11 @@ video {
     padding-bottom: 0.75rem;
   }
 
+  .lg\:px-6{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   .lg\:pt-3{
     padding-top: 0.75rem;
   }
@@ -914,6 +924,11 @@ video {
   .lg\:text-2xl{
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .lg\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
   .lg\:font-normal{

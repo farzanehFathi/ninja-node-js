@@ -1,0 +1,25 @@
+<div class="px-3 lg:px-6">
+  <h1 class="text-xl lg:text-3xl my-6 font-bold text-branding">
+    Search Results
+  </h1>
+
+  <ul class="mb-12">
+    <% data.forEach (post => { %>
+    <div class="border-l-8 border-branding mb-3 pl-3">
+      <li
+        class="border-b border-gray-200 py-1 lg:flex lg:justify-between lg:items-center lg:py-3"
+      >
+        <a
+          href="/post/<%= post._id %>"
+          class="text-lg font-semibold lg:text-2xl lg:font-normal hover:text-branding"
+        >
+          <%= post.title %></a
+        >
+        <div class="text-gray-600 text-sm lg:text-base">
+          <%= post.CreatedAt.toDateString() %>
+        </div>
+      </li>
+    </div>
+    <% }) %>
+  </ul>
+</div>
