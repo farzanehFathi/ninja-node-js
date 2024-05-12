@@ -1,1 +1,57 @@
-<h3>Sign in</h3>
+<div class="lg:flex lg:justify-evenly">
+  <div class="ml-6 my-3 lg:ml-0 lg:my-6 lg:text-lg">
+    <h3 class="font-bold py-6 text-lg lg:py-12 lg:text-3xl">Sign In</h3>
+    <form action="/admin" method="POST">
+      <label class="block" for="username">Username</label>
+      <input
+        class="block mb-3 pl-1 py-1 rounded-md hover:border hover:border-branding"
+        type="text"
+        placeholder="Enter Username"
+        name="username"
+      />
+
+      <label class="block" for="password">Password</label>
+      <input
+        class="block mb-3 pl-1 py-1 rounded-md hover:border hover:border-branding"
+        type="password"
+        placeholder="Enter Password"
+        name="password"
+      />
+
+      <input
+        class="block py-1 px-6 bg-branding text-white hover:bg-white hover:text-branding hover:border hover:border-branding"
+        type="submit"
+        value="login"
+        class="btn"
+      />
+    </form>
+  </div>
+
+  <div class="ml-6 my-3 lg:ml-0 lg:my-6 lg:text-lg">
+    <h3 class="font-bold py-6 text-lg lg:py-12 lg:text-3xl">Register</h3>
+    <form action="/register" method="POST">
+      <label class="block" for="username">Username</label>
+      <input
+        class="block mb-3 pl-1 py-1 rounded-md hover:border hover:border-branding"
+        type="text"
+        placeholder="Enter Username"
+        name="username"
+      />
+
+      <label class="block" for="password">Password</label>
+      <input
+        class="block mb-3 pl-1 py-1 rounded-md hover:border hover:border-branding"
+        type="password"
+        placeholder="Enter Password"
+        name="password"
+      />
+
+      <input
+        class="block py-1 px-6 bg-branding text-white hover:bg-white hover:text-branding hover:border hover:border-branding"
+        type="submit"
+        value="Register"
+        class="btn"
+      />
+    </form>
+  </div>
+</div>
