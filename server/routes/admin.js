@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const adminLayout = "../views/layouts/admin";
+const jwtSecret = process.env.JWT_SECRET;
 
 //GET --- Admin - Login Page
 
@@ -28,13 +29,21 @@ router.post("/admin", async (req, res) => {
   try {
     const { username, password } = req.body;
 
-    if (req.body.username === "admin" && req.body.password === "password") {
-      res.send("you are logged in");
-    } else {
-      res.send("wrong username and password");
+    const user = await User.findOne({ username });
+
+    if (!User) {
+      return res.status(401).json({ message: "Invalid Credentials" });
+    }
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: "Invalid Credentials" });
     }
 
-    res.redirect("/admin");
+    const token = jwt.sign({ userId: user._id }, jwtSecret);
+    res.cookie("token", token, { httpONly: true });
+
+    res.redirect("/dashboard");
   } catch (err) {
     console.log(err);
   }
