@@ -155,6 +155,13 @@ router.delete("/delete-post/:id", authMiddleware, async (req, res) => {
   }
 });
 
+//GET --- Adming - Logout
+
+router.get("/logout", (req, res) => {
+  res.clearCookie("token");
+  res.redirect("/");
+});
+
 //POST --- Admin - Register
 
 router.post("/register", async (req, res) => {
