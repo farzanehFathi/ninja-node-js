@@ -1,0 +1,41 @@
+<div class="px-3 md:px-6 lg:px-12 my-6 lg:my-12">
+  <a href="/post/<%= data._id %>" class="text-branding"> &larr; Back </a>
+  <div class="lg:w-6/12 flex justify-between items-center">
+    <h2 class="lg:text-2xl my-6 lg:my-12">View / Edit Post</h2>
+
+    <form action="/delete-post/<%= data._id %>?_method=DELETE" method="POST">
+      <input
+        type="submit"
+        value="Delete"
+        class="my-3 py-1 px-3 border border-branding bg-branding text-white hover:cursor-pointer hover:text-branding hover:bg-white"
+      />
+    </form>
+  </div>
+  <form action="/edit-post/<%= data._id %>?_method=PUT" method="POST">
+    <label class="block lg:text-lg" for="title">Title</label>
+    <input
+      class="block mb-3 w-full lg:w-6/12 pl-2 py-1 border border-gray-300 rounded-md"
+      type="text"
+      placeholder="Post Title"
+      name="title"
+      value="<%= data.title %>"
+    />
+
+    <label class="block lg:text-lg" for="body">Content</label>
+    <textarea
+      class="block mb-3 w-full lg:w-6/12 pl-2 py-1 border border-gray-300 rounded-md"
+      placeholder="Post content"
+      name="body"
+      cols="50"
+      rows="10"
+    >
+<%= data.body %></textarea
+    >
+
+    <input
+      class="my-3 py-1 px-3 border border-branding bg-branding text-white hover:cursor-pointer hover:text-branding hover:bg-white"
+      type="submit"
+      value="Update"
+    />
+  </form>
+</div>

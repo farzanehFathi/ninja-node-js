@@ -617,6 +617,14 @@ video {
   display: block;
 }
 
+.inline-block{
+  display: inline-block;
+}
+
+.inline{
+  display: inline;
+}
+
 .flex{
   display: flex;
 }
@@ -643,6 +651,10 @@ video {
 
 .w-full{
   width: 100%;
+}
+
+.w-6\/12{
+  width: 50%;
 }
 
 .items-center{
