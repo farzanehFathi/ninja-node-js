@@ -1,7 +1,30 @@
-<a href="/dashboard"> &larr; Back </a>
+<div class="px-3 md:px-6 lg:px-12 my-6 lg:my-12">
+  <a href="/dashboard" class="text-branding"> &larr; Back </a>
 
-<div>
-  <h2>Add New Post</h2>
+  <h2 class="lg:text-2xl my-6 lg:my-12">Add New Post</h2>
 
-  <form action="/add-post" method="POST"></form>
+  <form action="/add-post" method="POST">
+    <label class="block lg:text-lg" for="title">Title</label>
+    <input
+      class="block mb-3 w-full lg:w-6/12 pl-2 py-1 border border-gray-300 rounded-md"
+      type="text"
+      placeholder="Post Title"
+      name="title"
+    />
+
+    <label class="block lg:text-lg" for="body">Content</label>
+    <textarea
+      class="block mb-3 w-full lg:w-6/12 pl-2 py-1 border border-gray-300 rounded-md"
+      placeholder="Post content"
+      name="body"
+      cols="50"
+      rows="10"
+    ></textarea>
+
+    <input
+      class="block my-3 py-1 px-3 border border-branding bg-branding text-white hover:cursor-pointer hover:text-branding hover:bg-white"
+      type="submit"
+      value="Add"
+    />
+  </form>
 </div>

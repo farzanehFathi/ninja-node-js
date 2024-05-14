@@ -89,7 +89,8 @@ router.get("/add-post", authMiddleware, async (req, res) => {
       title: "Add Post",
       description: "Create a Blog Post with NodeJs, Express & MongoDb",
     };
-    res.render("admin/index", { locals, layout: adminLayout });
+    const data = await Post.find();
+    res.render("admin/add-post", { locals, layout: adminLayout });
   } catch (err) {
     console.log(err);
   }
