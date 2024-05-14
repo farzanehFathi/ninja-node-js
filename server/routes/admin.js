@@ -74,7 +74,7 @@ router.get("/dashboard", authMiddleware, async (req, res) => {
       description: "Manage content and blogs",
     };
 
-    const data = await Post.find();
+    const data = await Post.find().sort({ CreatedAt: -1 });
 
     res.render("admin/dashboard", { locals, data, layout: adminLayout });
   } catch (err) {
@@ -96,6 +96,25 @@ router.get("/add-post", authMiddleware, async (req, res) => {
   }
 });
 
+// POST --- Admin - Create a New Post
+router.post("/add-post", authMiddleware, async (req, res) => {
+  try {
+    try {
+      const newPost = new Post({
+        title: req.body.title,
+        body: req.body.body,
+      });
+
+      await Post.create(newPost);
+      res.redirect("/dashboard");
+    } catch (err) {
+      console.log(err);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 //POST --- Admin - Register
 
 router.post("/register", async (req, res) => {
@@ -109,7 +128,7 @@ router.post("/register", async (req, res) => {
       res.status(201).json({ message: "User created", user });
     } catch (err) {
       if (err.code === 11000) {
-        res.status(409).json({ message: "User alread in use" });
+        res.status(409).json({ message: "User already in use" });
       }
       res.status(500).json({ message: "Internal server error" });
     }
